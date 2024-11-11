@@ -71,19 +71,21 @@ const selectCourse = (role, callback) => {
     document.querySelector('.main-container').appendChild(divCourses);
 
     const module = `
-        <h2>Seleccione el curso</h2>
-        <h3>Cursos disponibles</h3>
-        <form id="form-select-course" class="form-select-course">
-            <div class="form-group">
-                <select id="course-select" required class="select-input">
-                    <option value="">Seleccione un curso</option>
-                    <option value="course 1">Curso 1</option>
-                    <option value="course 2">Curso 2</option>
-                    <option value="course 3">Curso 3</option>
-                </select>
-            </div>
-            <button type="submit" class='select-course btn'>Enviar</button>
-        </form>
+        <div class="container-select">
+            <h2>Seleccione el curso</h2>
+            <h3>Cursos disponibles</h3>
+            <form id="form-select-course" class="form-select-course">
+                <div class="form-group">
+                    <select id="course-select" required class="select-input">
+                        <option value="">Seleccione un curso</option>
+                        <option value="course 1">Curso 1</option>
+                        <option value="course 2">Curso 2</option>
+                        <option value="course 3">Curso 3</option>
+                    </select>
+                </div>
+                <button type="submit" class='select-course btn'>Enviar</button>
+            </form>
+        </div>
     `;
 
     divCourses.innerHTML = module;
