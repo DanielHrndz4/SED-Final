@@ -158,7 +158,14 @@ table {
 .nav-ul>li:hover {
     cursor: pointer;
     color: black;
-    background-color: white;
+    background-color: rgb(245, 236, 236);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.nav-ul>li:active {
+    transform: translateY(2px);
+    box-shadow: none;
 }
 
 .nav-ul>li>input {
@@ -203,10 +210,15 @@ main {
 }
 
 .welcome {
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.7);
+    max-width: 800px;
+    margin: 30px auto;
+    font-family: 'Arial', sans-serif;
     transition: 0.3s;
     border-radius: 5px;
-    padding: 15px;
-    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
 
     color: black;
     display: flex;
@@ -236,6 +248,12 @@ main {
             padding-top: 1rem;
         }
     }
+}
+
+.welcome:hover {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    transform: translateY(-5px);
+    transition: all 0.3s ease;
 }
 
 #show-home {
@@ -283,7 +301,11 @@ label {
     /* Peso de fuente medio */
 }
 
-.container-select {}
+.container-select {
+    padding: 20px;
+    border-radius: 9px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
+}
 
 .select-input {
     padding: 0.75rem;
