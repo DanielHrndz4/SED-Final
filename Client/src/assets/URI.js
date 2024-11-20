@@ -1,0 +1,1 @@
+export const URI = 'http://127.0.1.10:8080'
