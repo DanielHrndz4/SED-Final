@@ -38,7 +38,7 @@ const Login = () => {
     try {
       // Enviar credenciales sanitizadas al servidor
 
-      const response = await fetch("http://localhost:8000/Login.php", {
+      const response = await fetch("http://127.0.1.10:8080/backend/Login.php", {
         method: "POST",
         headers: {
           "Content-Type": "application/json"

@@ -32,7 +32,7 @@ const AddTeachersComponent = () => {
         }
 
         try {
-            const response = await fetch("http://localhost:8000/AddTeacher.php", {
+            const response = await fetch("http://127.0.1.10:8080/backend/AddTeacher.php", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",

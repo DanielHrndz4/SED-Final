@@ -21,7 +21,7 @@ const NewRequestsComponent = () => {
         if (newRequest.name && newRequest.type && newRequest.date && newRequest.message) {
             try {
                 // Enviar solo la nueva solicitud al servidor
-                const response = await fetch("http://localhost:8000/NewRequest.php", {
+                const response = await fetch("http://127.0.1.10:8080/backend/NewRequest.php", {
                     method: "POST",
                     headers: {
                         "Content-Type": "application/json",
