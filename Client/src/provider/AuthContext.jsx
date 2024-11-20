@@ -14,9 +14,7 @@ export const AuthProvider = ({ children }) => {
   const { setRole } = useRole(); // Usamos el contexto de roles para actualizar el role
 
   const login = (userData, jwt_token) => {
-    // Eliminar la propiedad password del objeto userData antes de guardarlo
-    const { password, ...userWithoutPassword } = userData[0]; // Esto eliminará 'password' del objeto
-    console.log(userWithoutPassword);
+    const userWithoutPassword = userData[0];
     // Guardar los datos del usuario sin la contraseña en localStorage
     setUser(userWithoutPassword);
     localStorage.setItem('user', JSON.stringify(userWithoutPassword)); // Guardamos sin la contraseña
