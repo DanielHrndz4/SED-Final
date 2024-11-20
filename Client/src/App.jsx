@@ -14,25 +14,27 @@ import ProtectedRoute from "./routes/ProtectedRoute";
 import { AuthProvider } from "./provider/AuthContext";
 import Login from "./pages/login/Login";
 import UploadNotes from "./pages/upload-notes/UploadNotes";
-import { URI } from "./assets/URI";
 
 function App() {
   return (
+    
     <RoleProvider>
-      <AuthProvider>
+    <AuthProvider>
+      
         <BrowserRouter>
           <Routes>
-            <Route path={`${URI}/login`} element={<Login />} />
+
+            <Route path="/login" element={<Login />} />
+            { <Route
+            path="/"
+            element={
+              <ProtectedRoute>
+                <Home />
+              </ProtectedRoute>
+            }
+          /> }
             <Route
-              path={`${URI}/`}
-              element={
-                <ProtectedRoute>
-                  <Home />
-                </ProtectedRoute>
-              }
-            />
-            <Route
-              path={`${URI}/ver-notas`}
+              path="/ver-notas"
               element={
                 <ProtectedRoute allowedRoles={["student"]}>
                   <ViewQualifications />
@@ -40,7 +42,7 @@ function App() {
               }
             />
             <Route
-              path={`${URI}/ver-solicitud`}
+              path="/ver-solicitud"
               element={
                 <ProtectedRoute allowedRoles={["student"]}>
                   <ViewRequests />
@@ -48,7 +50,7 @@ function App() {
               }
             />
             <Route
-              path={`${URI}/nueva-solicitud`}
+              path="/nueva-solicitud"
               element={
                 <ProtectedRoute allowedRoles={["student"]}>
                   <NewRequests />
@@ -56,7 +58,7 @@ function App() {
               }
             />
             <Route
-              path={`${URI}/ver-alumnos-inscritos`}
+              path="/ver-alumnos-inscritos"
               element={
                 <ProtectedRoute allowedRoles={["teacher", "admin"]}>
                   <ViewStudents />
@@ -64,7 +66,7 @@ function App() {
               }
             />
             <Route
-              path={`${URI}/subir-notas`}
+              path="/subir-notas"
               element={
                 <ProtectedRoute allowedRoles={["teacher", "admin"]}>
                   <UploadNotes />
@@ -72,7 +74,7 @@ function App() {
               }
             />
             <Route
-              path={`${URI}/ver-maestros`}
+              path="/ver-maestros"
               element={
                 <ProtectedRoute allowedRoles={["admin"]}>
                   <ViewTeacher />
@@ -80,7 +82,7 @@ function App() {
               }
             />
             <Route
-              path={`${URI}/ver-alumnos`}
+              path="/ver-alumnos"
               element={
                 <ProtectedRoute allowedRoles={["admin"]}>
                   <ViewStudentsAdmin />
@@ -88,7 +90,7 @@ function App() {
               }
             />
             <Route
-              path={`${URI}/agregar-maestro`}
+              path="/agregar-maestro"
               element={
                 <ProtectedRoute allowedRoles={["admin"]}>
                   <AddTeachers />
@@ -96,18 +98,19 @@ function App() {
               }
             />
             <Route
-              path={`${URI}/agregar-alumno`}
+              path="/agregar-alumno"
               element={
                 <ProtectedRoute allowedRoles={["admin"]}>
                   <AddStudents />
                 </ProtectedRoute>
               }
             />
+
             <Route path="*" element={<h1>Page not found</h1>} />
           </Routes>
         </BrowserRouter>
-      </AuthProvider>
-    </RoleProvider>
+        </AuthProvider>
+      </RoleProvider>
   );
 }
 
